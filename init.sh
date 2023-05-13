@@ -5,3 +5,7 @@ curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.6.0/docker-compose.y
 
 mkdir -p ./dags ./logs ./plugins
 echo -e "AIRFLOW_UID=$(id -u)" > .env
+
+docker compose up airflow-init
+
+docker compose up
