@@ -2,6 +2,9 @@
 
 Airflow instance to generate data for analytics web app.
 
+### Resources
+- [Example DAGs](https://github.com/apache/airflow/tree/main/airflow/example_dags)
+
 ### Instance Management
 
 ##### Init & Startup
