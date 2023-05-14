@@ -1,4 +1,4 @@
-# Analytics Webapp - Airflow
+# Analytics Web App - Airflow
 
 Airflow instance to generate data for analytics web app.
 
