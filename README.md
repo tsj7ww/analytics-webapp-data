@@ -1,29 +1,26 @@
-# Analytics Web App - Airflow
+# Analytics Webapp - Data
 
-Airflow instance to generate data for analytics web app.
+Code to generate data for analytics web app.
 
-### Resources
-- [Example DAGs](https://github.com/apache/airflow/tree/main/airflow/example_dags)
-- [Tasks](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/tasks.html)
+### Init
 
-### Instance Management
+Create AWS resources required for storing and maintaining data using Terraform.
 
-##### Init & Startup
-```
-mkdir airflow
-cd ./airflow
+Required Resources:
 
-curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.6.0/docker-compose.yaml'
+- RDS PostgreSQL (data)
+- Lambda (maintenance)
 
-mkdir -p ./dags ./logs ./plugins
-echo -e "AIRFLOW_UID=$(id -u)" > .env
+### Base
 
-docker compose up airflow-init
-docker compose up
-```
+Download data, process, and load into AWS RDS PostgreSQL database.
 
-##### Cleanup
-```
-docker compose down --volumes --remove-orphans
-docker compose down --volumes --rmi all
-```
+### Maintenance
+
+##### Lambda
+
+Lambda functions on AWS to maintain and update data.
+
+##### Airflow
+
+Containerized Airflow instance using Docker to maintain and update data.
